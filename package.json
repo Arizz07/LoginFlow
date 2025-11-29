@@ -9,13 +9,19 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "mongodb": "^7.0.0",
+    "mongoose": "^9.0.0",
     "next": "16.0.3",
     "react": "19.2.0",
-    "react-dom": "19.2.0"
+    "react-dom": "19.2.0",
+    "react-icons": "^5.5.0",
+    "react-toastify": "^11.0.5"
   },
   "devDependencies": {
+    "@iconify/tailwind4": "^1.1.0",
     "@tailwindcss/postcss": "^4",
     "babel-plugin-react-compiler": "1.0.0",
+    "baseline-browser-mapping": "^2.8.32",
     "eslint": "^9",
     "eslint-config-next": "16.0.3",
     "tailwindcss": "^4"

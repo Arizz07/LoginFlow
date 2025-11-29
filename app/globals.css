@@ -24,3 +24,10 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+.bg-grad{
+  
+ background-image: linear-gradient( to bottom,  rgba(4,20,51,1) 11.3%, rgb(91, 89, 100) 97.7% );
+}
+.bg-grad1{background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(202,248,255,1) 0%, rgba(186,204,227,1) 51.2%, rgba(117,144,179,1) 100.1% );
+}
+
