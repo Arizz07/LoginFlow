@@ -11,8 +11,8 @@ function signup() {
     const router = useRouter();
     const [mounted, setMounted] = useState(false);
     const [signupForm,setSignupForm] = useState({
-      uname:"",
-      mail:"",
+      username:"",
+      email:"",
       password:""
     })
 
@@ -23,8 +23,8 @@ function signup() {
     const savedData =  localStorage.getItem("signupData");
   
       setSignupForm({
-        uname:"",
-        mail:"",
+        username:"",
+        email:"",
         password:""
       })
 
@@ -45,7 +45,7 @@ function signup() {
   const formSubmit = async (e)=>{
     e.preventDefault();
     console.log(signupForm);
-    if(!signupForm.uname || !signupForm.mail || !signupForm.password){
+    if(!signupForm.username || !signupForm.email || !signupForm.password){
       toast.error("Please fill all the fields");
       return;
     }
@@ -84,8 +84,8 @@ function signup() {
     console.log("signup form submitted");
 
     setSignupForm({
-      uname:"",
-      mail:"",
+      username:"",
+      email:"",
       password:""
     })  
   }
@@ -106,14 +106,14 @@ function signup() {
            </div>
            <div className="input-group flex - flex-col gap-8   mt-16 w-full">
             <input className='w-full h-12 px-2 py-2 border-b outline-none duration-300 transition-all hover:border-2 hover:border-green-300 hover:rounded-lg mb-2 shadow-md'
-            value={signupForm.uname}
+            value={signupForm.username}
             onChange={handleChange}
-             type="text" name="uname" id="uname"  placeholder='Username:'
+             type="text" name="username" id="username"  placeholder='Username:'
              required/>
             <input className='w-full h-12 px-2 py-2 border-b outline-none duration-300 transition-all hover:border-2 hover:border-green-300 hover:rounded-lg mb-2 shadow-md'
-            value={signupForm.mail}
+            value={signupForm.email}
             onChange={handleChange}
-             type="email" name='mail' id='mail' placeholder='Email:'
+             type="email" name='email' id='email' placeholder='Email:'
              required />
             <input className='w-full h-12 px-2 py-2 border-b outline-none duration-300 transition-all hover:border-2 hover:border-green-300 hover:rounded-lg mb-2 shadow-md'
             value={signupForm.password}

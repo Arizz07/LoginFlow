@@ -3,13 +3,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import { toast,ToastContainer } from "react-toastify";
 
 
 export default function Home() {
     const [mounted, setMounted] = useState(false);
     const [form , setForm] = useState({
-      uname: "",
-      pass:""
+      username: "",
+      password:""
     });
     const router = useRouter();
 
@@ -42,14 +43,20 @@ export default function Home() {
       return;
     }
     setForm({
-      uname: "",
-      pass:""
+      username: "",
+      password:""
     })
-    router.push('/dashboard');
+    toast.success("Login Successful");
+    setTimeout(() =>{
+      router.refresh();
+      router.push('/dashboard');
+    },3000);
+    
     
   }
   return (
     <>
+    <ToastContainer position="top-center"/>
     <main className="bg-[url('/images/BG.jpeg')] bg-no-repeat bg-cover  h-full w-full flex justify-center items-center">
     <div className={`flex justify-center  h-130 w-100 border bg-neutral-700/25 backdrop-blur-lg  rounded-xl shadow-2xl p-4
     order border-white/10
@@ -66,19 +73,19 @@ export default function Home() {
         <label className="text-lg " htmlFor="uname">Username:</label>
         <input className="w-80 h-10 border rounded-md  outline-none px-3 py-1 mb-4 hover:border-2 transition-all hover:border-cyan-200"
          type="text"
-        name="uname" 
-        id="uname" 
-        value={form.uname}
-        onChange={(e) => setForm({...form, uname: e.target.value})}
+        name="username" 
+        id="username" 
+        value={form.username}
+        onChange={(e) => setForm({...form, username: e.target.value})}
         required placeholder="" />
 
           <label className="text-lg " htmlFor="uname">Password:</label>
         <input className="w-80 h-10 border rounded-md  outline-none px-3 py-1 mb-2 hover:border-2 transition-all hover:border-cyan-200" 
         type="password" 
-        name="pass" 
-        id="pass" 
-        value={form.pass}
-        onChange={(e) => setForm({...form, pass: e.target.value})}
+        name="password" 
+        id="password" 
+        value={form.password}
+        onChange={(e) => setForm({...form, password: e.target.value})}
         required placeholder="" />
        </div>
 
